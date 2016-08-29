@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+body{
+	font-size:14px;
+	background:#f7f7f7
+}
+
+.loginWraper{
+	position: relative;
+}
+.loginWraper{
+	position:absolute;
+	width:100%;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	z-index:1;
+	background:#f7f7f7
+}
+.loginBox{
+	position:absolute;
+	width:180px;
+	height:180px;
+	left:50%;
+	top:100px;
+	margin-left:-90px;
+	cursor:pointer;
+}
+.loginBox img{
+	width:100%;
+	height:100%;
+}
+.wel-title {
+	position: relative;
+	box-sizing: border-box;
+	margin-top:300px;
+	text-align: center;
+	font-size:18px;
+	color:#8a95a5;
+}
+.wel-title p{
+	line-height:20px;
+}
+.wel-title .adminder-name,.wel-title .adminder{
+	color:#1c34ca;
+}
+.wel-title .login-time{
+	font-size:12px;
+}
+.wel-enter{
+	position: relative;
+	box-sizing: border-box;
+	margin-top:10px;
+	text-align: center;
+}
+.wel-enter .enter-content{
+	position: relative;
+	float:left;
+	left: 50%;
+}
+.enterList{
+	zoom: 1;
+	width:400px;
+	position: relative;
+	float:left;
+	left:-50%;
+}
+.enterList:after{
+	content: "";
+	clear: both;
+	display: block;
+}
+.enterList li{
+	width:180px;
+	height:46px;
+	text-align: center;
+	line-height: 46px;
+	color:#fff;
+	font-size:14px;
+	cursor:pointer;
+	margin-bottom:20px;
+}
+.enterList .acc{
+	background: url(../images/menjin_btn.png) no-repeat;
+	margin-right: 25px;
+}
+.enterList .add{
+	background: url(../images/tianjia_btn.png) no-repeat;
+}
+.enterList .wel-check{
+	background: url(../images/kaoqin_btn.png) no-repeat;
+	margin-right: 25px;
+}
+.enterList .visitor{
+	background: url(../images/fangke_btn.png) no-repeat;
+}
+@media (max-width:617px) {
+	.loginbox{
+		width:100%;
+		position:static;
+		margin-top:0;
+		margin-left:0;
+	}
+}
+@media (max-width:617px) {
+	.loginBox .input-text{
+		width:80%
+	}
+}
+
+

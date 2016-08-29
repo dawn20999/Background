@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>后台管理 - 登录</title>
+    <link href="content/admin_login.css" rel="stylesheet" type="text/css">
+</head>
+<body >
+<div class="loginWrap">
+    <div class="logo">
+        <div align="center">
+            <img src="images/icon.png" width="52">
+            <img src="images/carduologo.png" width="100">
+        </div>
+    </div>
+    <form id="form1" method="get" action="index.html">
+        <div class="loginTitle">
+            <div align="center">百宝通智能门禁管理系统</div>
+        </div>
+        <div class="loginForm">
+            <div class="adming_login_border">
+                <div class="admin_input">
+                    <ul class="admin_items">
+                        <li>
+                            <label for="code">
+                                <span style="color:#000000;">企业编号：</span>
+                            </label>
+                            <input name="txtCode" id="txtCode" size="40" class="admin_input_style" type="text">
+
+                        </li>
+                        <li>
+                            <label for="user">
+                                <span style="color:#000000;">登录账号：</span>
+                            </label>
+                            <input name="txtLoginId" id="txtLoginId" size="40" class="admin_input_style" type="text">
+
+                        </li>
+                        <li>
+                            <label for="pwd">
+                                <span style="color:#000000;">密码：</span>
+                            </label>
+                            <input name="txtPwd" id="txtPwd" size="40" class="admin_input_style" type="password">
+
+                        </li>
+                        <li>
+                            <a style="text-decoration: none; color: #003399;" href="#">忘记密码?</a>
+                        </li>
+                        <li>
+                            <input name="btnLogin" value="提交" id="btnLogin" tabindex="3" class="btn btn-primary" type="submit">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

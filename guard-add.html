@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" href="js/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>添加规则</title>
+</head>
+<body>
+<div class="guard-add">
+    <nav class="breadcrumb">
+        时间规则
+        <span class="c-gray en">&gt;</span>
+        门禁时间规则
+        <span class="c-gray en">&gt;</span>
+        添加规则
+    </nav>
+    <article class="page-container">
+        <form  class="form form-horizontal">
+            <div class="row cl">
+                <label class="form-label col-xs-3  col-sm-2 "><span class="c-red">*</span>规则名称：</label>
+                <div class="formControls col-xs-9 col-sm-10 ">
+                    <input type="text" class="input-text" autocomplete="off" placeholder="请填写规则名称" name="name" style="width:300px">
+                    <p class="guardadd-main">请填写规则名称</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">规则备注：</label>
+                <div class="formControls col-xs-9 col-sm-10 ">
+                    <input type="text" class="input-text" autocomplete="off" placeholder="请填写规则备注" name="name" style="width:300px">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">规则状态：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <input type="radio" name="state" checked="checked">启用 &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="state">停用
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2 week-modle">选择周模式：</label>
+                <div class="formControls col-xs-9 col-sm-10 cl week">
+                    <div class="l">
+                        <input type="checkbox">朝九晚五
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">朝九晚五
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">上午
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">朝九晚五
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">下午
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2 holiday-modle">选择特殊模式：</label>
+                <div class="formControls col-xs-9 col-sm-10 cl holiday">
+                    <div class="l">
+                        <input type="checkbox">春节
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">端午节
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">清明节
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">儿童节
+                    </div>
+                    <div class="l">
+                        <input type="checkbox">国庆节
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-9 col-sm-10 col-xs-offset-3 col-sm-offset-2" >
+                    <input class="btn btn-primary radius" id="yesBtn" type="button" value="&nbsp;&nbsp;确认&nbsp;&nbsp;">&nbsp;&nbsp;
+                    <input class="btn btn-danger radius" id="noBtn" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="js/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+
+</body>
+</html>

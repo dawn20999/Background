@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>添加时间模式</title>
+</head>
+<body>
+<div class="settime-change">
+    <nav class="breadcrumb">
+        时间规则
+        <span class="c-gray en">&gt;</span>
+        设置时间模式
+        <span class="c-gray en">&gt;</span>
+        添加
+    </nav>
+    <article class="page-container">
+        <form  class="form form-horizontal">
+            <div class="row cl">
+                <label class="form-label col-xs-3  col-sm-2 "><span class="c-red">*</span>时段名称：</label>
+                <div class="formControls col-xs-9 col-sm-10 ">
+                    <input type="text" class="input-text" autocomplete="off" placeholder="请填写时段名称" name="name" style="width:300px">
+                    <p class="settime-main">请填写时段名称</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3  col-sm-2 ">时间模式：</label>
+                <div class="formControls col-xs-9 col-sm-10 ">
+                    <select disabled name="modle" id="modle" style="width:150px;height:30px; color:#ccc;">
+                        <option value="start" >请选择开启模式</option>
+                        <option value="week" >周模式</option>
+                        <option value="special" >特殊模式</option>
+                    </select>
+                    <p class="settime-modle">请选择时间模式</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">日期</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <p class="settime-chose" id="d1">请选择时段模式</p>
+                    <div class="weektime cl" id="d2">
+                        <div class="l">
+                            <input type="checkbox">周一
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周二
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周三
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周四
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周五
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周六
+                        </div>
+                        <div class="l">
+                            <input type="checkbox">周日
+                        </div>
+                    </div>
+                    <div class="chose-special" id="d3">
+                        <input type="text" id="d4311" class="input-text " onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日',maxDate:'#F{$dp.$D(\'d4312\')}'})" style="width:140px;">至<input type="text" id="d4312" class="input-text " onFocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日',minDate:'#F{$dp.$D(\'d4311\')}'})" style="width:140px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2 week-modle">时段</label>
+                <div class="formControls col-xs-9 col-sm-10 cl">
+                    <input type="text" class="input-text " onFocus="WdatePicker({lang:'zh-cn',dateFmt:'HH:mm'})" style="width:100px;">-<input type="text" class="input-text " onFocus="WdatePicker({lang:'zh-cn',dateFmt:'HH:mm'})" style="width:100px;">
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-9 col-sm-10 col-xs-offset-3 col-sm-offset-2" >
+                    <input class="btn btn-primary radius" id="yesBtn" type="button" value="&nbsp;&nbsp;确认&nbsp;&nbsp;">&nbsp;&nbsp;
+                    <input class="btn btn-danger radius" id="noBtn" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+<script >
+    $(function(){
+        $("#d2").hide();
+        $("#d3").hide();
+        $("#d1").hide();
+        if($("#modle").val() == 'start'){
+            $("#d1").show();
+        }else if($("#modle").val() == 'week'){
+            $("#d2").show();
+        }else if($("#modle").val() == 'special'){
+            $("#d3").show();
+        }
+    });
+</script>
+
+</body>
+</html>

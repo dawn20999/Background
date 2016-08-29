@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>修改</title>
+</head>
+<body>
+<div class="device-change">
+    <nav class="breadcrumb">
+        设备管理
+        <span class="c-gray en">&gt;</span>
+        设备管理
+        <span class="c-gray en">&gt;</span>
+        修改
+    </nav>
+    <article class="page-container">
+        <form class="form form-horizontal" id="form-change-password">
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">设备组：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <p id="space">A区域</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>设备名称：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <input type="text" class="input-text" autocomplete="off" placeholder="请填写设备名称" name="name" style="width:300px;">
+                    <span class="short">建议为“组织名称+设备名”</span>
+                    <p class="device-must">请填写设备名称</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2"><span class="c-red">*</span>设备类型：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <select name="type" id="">
+                        <option value="num1">201</option>
+                        <option value="num2">301</option>
+                        <option value="num3">302</option>
+                    </select>
+                    <p class="device-type">请选择设备类型</p>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">设备备注：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <input type="text" class="input-text" autocomplete="off" placeholder="设备备注" name="newpassword2" id="new-password2" style="width:300px;">
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2"></label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <input type="checkbox" > 是否选择公共区域
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-3 col-sm-2">设备状态：</label>
+                <div class="formControls col-xs-9 col-sm-10">
+                    <div class="bund">
+                        <span>已绑定</span>
+                        <span>2016-08-20 13:00</span>
+                    </div>
+                    <div class="unbund">
+                        <span>未绑定</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-9 col-sm-10 col-xs-offset-3 col-sm-offset-2" style="margin-top:30px;">
+                    <input class="btn btn-primary radius" id="yesBtn" type="button" value="&nbsp;&nbsp;确认&nbsp;&nbsp;">
+                    <input class="btn btn-danger radius" id="noBtn" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

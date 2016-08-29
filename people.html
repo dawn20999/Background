@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>人员管理</title>
+</head>
+<body >
+<div class="people">
+    <nav class="breadcrumb">人员管理<span class="c-gray en">&gt;</span> 人员管理</nav>
+    <div class="page-container">
+        <div class="cl pd-5 bg-1 bk-gray">
+            <span class="l">
+                <a href="people-add.html" class="btn btn-primary radius">
+                    <i class="Hui-iconfont">&#xe600;</i>
+                    添加
+                </a>
+                <a href="javascript:;" onclick="member_delall()" class="btn btn-change btn-danger radius">
+                    <i class="Hui-iconfont">&#xe6e2;</i>
+                    删除
+                </a>
+            </span>
+            <div class="dataTables_wrapper no-footer r">
+                <a href="javascript:;" onclick="visitor()" class="btn btn-danger radius ">
+                    一键访客
+                </a>
+                <a href="javascript:;" onclick="start()" class="btn btn-danger radius start">
+                    启用
+                </a>
+                <a href="javascript:;" onclick="stop()" class="btn btn-danger radius stop">
+                    停用
+                </a>
+                <a href="javascript:;" onclick="comein()" id="leadingBtn" class="btn btn-danger radius comein">
+                    批量导入
+                </a>
+                <a href="javascript:;" onclick="comeout()" id="exportBtn" class="btn btn-danger radius comeout">
+                    批量导出
+                </a>
+                <div class="dataTables_filter">
+                    <label >
+                        <input type="search" class="input-text" >
+                        <a href="javascript:;"  class="btn btn-primary radius" id="manage-btn">搜索</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="page-pd">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                <tr class="text-c">
+                    <th width="30"><input type="checkbox" name="" value=""></th>
+                    <th width="100">姓名</th>
+                    <th width="100" >手机号</th>
+                    <th width="40">性别</th>
+                    <th width="80">组织</th>
+                    <th width="50">管理权限</th>
+                    <th width="50">访客权限</th>
+                    <th width="50">状态</th>
+                    <th width="100">添加时间</th>
+                    <th width="100">管理</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="1" name=""></td>
+                        <td>
+                            <p class="people-name">王瑞</p>
+                        </td>
+                        <td>
+                            <p class="tell">13000000000</p>
+                        </td>
+                        <td>
+                            <p class="sex">男</p>
+                        </td>
+                        <td>
+                            <p class="branch">产品部</p>
+                        </td>
+                        <td>
+                            <p class="peopleon">是</p>
+                        </td>
+                        <td>
+                            <p class="peopleno">是</p>
+                        </td>
+                        <td>
+                            <p class="peoplestart">启用</p>
+                        </td>
+                        <td>
+                            <p class="peopletime">2016-08-20</p>
+                        </td>
+                        <td>
+                            <a title="钥匙" href="people-key.html" style="text-decoration:none">
+                                钥匙
+                            </a>
+                            <a title="修改" href="people-add.html" class="ml-5" style="text-decoration:none">
+                                修改
+                            </a>
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="1" name=""></td>
+                        <td>
+                            <p class="people-name">王瑞</p>
+                        </td>
+                        <td>
+                            <p class="tell">13000000000</p>
+                        </td>
+                        <td>
+                            <p class="sex">男</p>
+                        </td>
+                        <td>
+                            <p class="branch">产品部</p>
+                        </td>
+                        <td>
+                            <p class="peopleon">是</p>
+                        </td>
+                        <td>
+                            <p class="peopleno">是</p>
+                        </td>
+                        <td>
+                            <p class="peoplestart">启用</p>
+                        </td>
+                        <td>
+                            <p class="peopletime">2016-08-20</p>
+                        </td>
+                        <td>
+                            <a title="钥匙" href="people-key.html" style="text-decoration:none">
+                                钥匙
+                            </a>
+                            <a title="修改" href="people-add.html" class="ml-5" style="text-decoration:none">
+                                修改
+                            </a>
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td><input type="checkbox" value="1" name=""></td>
+                        <td>
+                            <p class="people-name">王瑞</p>
+                        </td>
+                        <td>
+                            <p class="tell">13000000000</p>
+                        </td>
+                        <td>
+                            <p class="sex">男</p>
+                        </td>
+                        <td>
+                            <p class="branch">产品部</p>
+                        </td>
+                        <td>
+                            <p class="peopleon">是</p>
+                        </td>
+                        <td>
+                            <p class="peopleno">是</p>
+                        </td>
+                        <td>
+                            <p class="peoplestart">启用</p>
+                        </td>
+                        <td>
+                            <p class="peopletime">2016-08-20</p>
+                        </td>
+                        <td>
+                            <a title="钥匙" href="people-key.html" style="text-decoration:none">
+                                钥匙
+                            </a>
+                            <a title="修改" href="people-add.html" class="ml-5" style="text-decoration:none">
+                                修改
+                            </a>
+                            <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">
+                                删除
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    $('.table-sort').dataTable({
+        "searching":false,
+        bLengthChange: false,
+        "ordering":false
+    });
+
+    /*用户-删除*/
+    function member_del(obj,id){
+        layer.confirm('<div class="cancle">是否删除所选规则</div><div class="none">删除后无法恢复</div>',function(index){
+            $(obj).parents("tr").remove();
+            layer.msg('已删除!',{icon:1,time:1000});
+        });
+    }
+    function member_delall(){
+        layer.confirm('<div class="cancle">是否删除所选规则</div><div class="none">删除后无法恢复</div>');
+    }
+    function visitor(){
+        layer.confirm('<div class="cancle">所选人员有权发放访客临时钥匙</div>');
+    }
+    function start(){
+        layer.alert('<div class="cancle">所选人员已启用</div>');
+    }
+    function stop(){
+        layer.alert('<div class="cancle">所选人员已停用</div>');
+    }
+    function comein(){
+        layer.alert('<div class="cancle">导入失败！</div><div class="cancle">请检查数据表信息</div>');
+    }
+    function comeout(){
+        layer.alert('<div class="cancle">导出失败！</div>');
+    }
+
+</script>
+</body>
+</html>

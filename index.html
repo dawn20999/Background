@@ -1,0 +1,192 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/respond.min.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="content/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>百宝通后台管理系统</title>
+</head>
+<body>
+<header class="navbar-wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="container-fluid cl">
+			<div class="logo navbar-logo f-l mr-20 hidden-xs">
+				<a href="#">百宝通</a>
+			</div>
+			<span class="navbar-slogan f-l mr-10 hidden-xs"></span>
+			<a class="logo navbar-logo-m f-l mr-10 visible-xs" href="#">
+				<div class="logo navbar-logo f-l mr-10 hidden-xs" style="display: none;">
+					<a href="#">百宝通</a>
+				</div>
+			</a>
+			<a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;
+			</a>
+			<nav id="Hui-userbar" class="nav navbar-nav navbar-userbar hidden-xs">
+				<ul class="cl">
+					<li id="Hui-admin">管理员</li>
+					<li id="Hui-name">张三</li>
+					<li class="dropDown dropDown_hover">
+						<a href="javascript:;" onclick="indexout()" class="dropDown_A">退出登录</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-first">
+			<dt>
+				<i class="Hui-iconfont">&#xe625;</i>&nbsp;首页<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="welcome.html" data-title="首页" href="javascript:void(0)">首页</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-base">
+			<dt class="jichu">基础</dt>
+		</dl>
+		<dl id="menu-article">
+			<dt><i class="Hui-iconfontl"></i>&nbsp;组织管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="organize.html" data-title="组织设定" href="javascript:void(0)">组织设定</a></li>
+					<li><a _href="manage.html" data-title="管理设定" href="javascript:void(0)">权限规则</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-picture">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;人员管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="people.html" data-title="人员管理" href="javascript:void(0)">人员管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-product">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;设备管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="device.html" data-title="设备管理" href="javascript:void(0)">设备管理</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-comments">
+			<dt><i class="Hui-iconfontl"></i>&nbsp;时间规则<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="settime.html" data-title="设置时间模式" href="javascript:void(0)">设置时间模式</a></li>
+					<li><a _href="guard.html" data-title="门禁时间规则" href="javascript:void(0)">门禁时间规则</a></li>
+					<li><a _href="visitor.html" data-title="访客时间规则" href="javascript:;">访客时间规则</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-key">
+			<dt class="jichu">钥匙</dt>
+		</dl>
+		<dl id="menu-member">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;门禁授权<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="access.html" data-title="门禁授权" href="javascript:void(0)">门禁授权</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-admin">
+			<dt><i class="Hui-iconfontl"></i>&nbsp;公共区域<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a _href="public.html" data-title="公共区域" href="javascript:void(0)">公共区域</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-tongji">
+			<dt class="jichu">办公</dt>
+		</dl>
+		<dl id="menu-system">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;人员考勤<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="attendance.html" data-title="人员考勤管理" href="javascript:void(0)">人员考勤管理</a></li>
+					<li><a _href="accredit.html" data-title="授权操作记录" href="javascript:void(0)">授权操作记录</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-visitor">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;访客管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="visitorAuthorize.html" data-title="访客授权记录" href="javascript:void(0)">访客授权记录</a></li>
+					<li><a _href="visitorRecord.html" data-title="访客出入记录" href="javascript:void(0)">访客出入记录</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl >
+			<dt class="jichu">系统</dt>
+		</dl>
+		<dl id="menu-v">
+			<dt>
+				<i class="Hui-iconfontl"></i>&nbsp;系统信息<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i>
+			</dt>
+			<dd>
+				<ul>
+					<li><a _href="loginMation.html" data-title="登录信息设定" href="javascript:void(0)">登录信息设定</a></li>
+					<li><a _href="password.html" data-title="修改密码" href="javascript:void(0)">修改密码</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl >
+			<dt class="jichu"></dt>
+		</dl>
+		<dl >
+			<dt></dt>
+		</dl>
+	</div>
+</aside>
+<section class="Hui-article-box">
+	<div id="iframe_box" class="Hui-article">
+		<div class="show_iframe">
+			<div style="display:none" class="loading"></div>
+			<iframe scrolling="yes" frameborder="0" src="welcome.html"></iframe>
+		</div>
+	</div>
+</section>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<script >
+	function indexout(){
+		layer.confirm('<div class="indexout">是否退出系统</div>');
+	}
+</script>
+</body>
+</html>

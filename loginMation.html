@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>系统信息</title>
+</head>
+<body>
+<div class="loginMation">
+    <nav class="breadcrumb">
+        系统信息
+        <span class="c-gray en">&gt;</span>
+        登录设置
+    </nav>
+    <div class="page-container">
+        <form class="form form-horizontal">
+            <div class="row cl">
+                <div class="col-xs-6 col-sm-5">
+                    <div class="mt-5">
+                        <h2 class="title">企业基本信息</h2>
+                        <div class="mt-5">
+                            <span class="firmName">企业名称：</span>
+                            <span class="firmMessage">卡多宝</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmNumber">企业编号：</span>
+                            <span class="number">001</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmAccound">企业账号：</span>
+                            <span class="accound">kdb123456</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="title">系统状态</h2>
+                        <div class="mt-5">
+                            <span class="firmName">总员工数：</span>
+                            <span class="firmMessage">35</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmNumber">启用员工数：</span>
+                            <span class="number">25</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmAccound">绑定设备数：</span>
+                            <span class="accound">99</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmAccound">创建时间：</span>
+                            <span class="accound">2016-01-08 15:50</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmAccound">最后登录时间：</span>
+                            <span class="accound">2016-02-08 12:50</span>
+                        </div>
+                        <div class="mt-5">
+                            <span class="firmAccound">版本号：</span>
+                            <span class="accound">V1.0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-7">
+                    <div>
+                        <h2 class="title">企业联系方式</h2>
+                        <div>
+                            <span class="firmName">企业联系电话：</span>
+                            <input type="text" placeholder="区号" class="input-text short">-<input type="text" placeholder="固定电话" class="input-text long">
+                        </div>
+                        <div class="loginMation-phone">
+                            <span class="firmNumber">企业联系手机：</span>
+                            <input type="text" placeholder="手机号码" class="input-text tellNum">
+                        </div>
+                        <div class="mationLogo cl">
+                            <span class="l">企业logo</span>
+                            <div class="logoContent l">
+                                <img src="images/wel-logo.png" alt="logo">
+                                <div class="mt-10">
+                                    <input type="button" value="点击上传" class="btn btn-primary radius">
+                                </div>
+                                <div>
+                                    <span>图片尺寸:180x180</span><br/>
+                                    <span>图片大小:200k以内</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-7 col-sm-7 mt-20  footbtn">
+                    <input class="btn btn-primary radius" type="button" value="保存修改" onclick="hold()">
+                    <input class="btn btn-danger radius keep" type="button" value="&nbsp;&nbsp;取消&nbsp;&nbsp;" >
+                </div>
+                <div class="col-xs-5 col-sm-5"></div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    //    修改成功
+    function hold(){
+        layer.confirm('<div class="cancle">修改成功</div>',{
+            btn:['确认']
+        });
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

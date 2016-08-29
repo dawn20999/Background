@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" href="js/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>人员考勤管理</title>
+</head>
+<body>
+<div class="attendance">
+    <nav class="breadcrumb">
+        人员考勤
+        <span class="c-gray en">&gt;</span>
+        人员考勤管理
+    </nav>
+    <div class="page-container">
+        <div class=" pd-5 bg-1 bk-gray">
+            <div class="titleBtn cl">
+                <div class="l">
+                    <span>考勤时段</span>
+                    <input type="text" class="input-text"  onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日 HH:mm'})" style="width:200px"> 至 <input type="text" class="input-text"  onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日 HH:mm'})" style="width:200px">
+                </div>
+                <div class="ml-10 l">
+                    <a href="javascript:;" onclick="selection_device('','choseDevice.html','400','450')" class="btn btn-danger radius">选择设备</a>
+                    <a href="javascript:;" onclick="selection_person('','chosePerson.html','400','450')" class="btn btn-danger radius">选择人员</a>
+                    <a href="javascript:;" onclick="access_btn()" class="btn btn-primary radius">查看考勤</a>
+
+                </div>
+                <div class="r">
+                    <a href="javascript:;" onclick="export_out()" class="btn btn-danger radius">导出记录</a>
+                </div>
+            </div>
+        </div>
+        <div class="page-pd">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                    <tr class="text-c">
+                        <th width="250">开门时间</th>
+                        <th width="250">组织</th>
+                        <th width="250" >人员</th>
+                        <th width="250" >手机号码</th>
+                        <th width="250">设备组</th>
+                        <th width="250">设备</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-c">
+                        <td>
+                            <p class="attendance-time">2016-08-05 20:00</p>
+                        </td>
+                        <td>
+                            <p class="attendance-door">A空间会议室1</p>
+                        </td>
+                        <td>
+                            <p class="attendance-name">孙先生</p>
+                        </td>
+                        <td>
+                            <p class="attendance-tell">13800000000</p>
+                        </td>
+                        <td>
+                            <p class="attendance-send">卡多宝公司</p>
+                        </td>
+                        <td>
+                            <p class="attendance-sender">设备1</p>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td>
+                            <p class="attendance-time">2016-08-05 20:00</p>
+                        </td>
+                        <td>
+                            <p class="attendance-door">A空间会议室1</p>
+                        </td>
+                        <td>
+                            <p class="attendance-name">孙先生</p>
+                        </td>
+                        <td>
+                            <p class="attendance-tell">13800000000</p>
+                        </td>
+                        <td>
+                            <p class="attendance-send">卡多宝公司</p>
+                        </td>
+                        <td>
+                            <p class="attendance-sender">设备1</p>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td>
+                            <p class="attendance-time">2016-08-05 20:00</p>
+                        </td>
+                        <td>
+                            <p class="attendance-door">A空间会议室1</p>
+                        </td>
+                        <td>
+                            <p class="attendance-name">孙先生</p>
+                        </td>
+                        <td>
+                            <p class="attendance-tell">13800000000</p>
+                        </td>
+                        <td>
+                            <p class="attendance-send">卡多宝公司</p>
+                        </td>
+                        <td>
+                            <p class="attendance-sender">设备1</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="js/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+//    选择设备
+    function selection_device(title,url,w,h){
+        layer_show(title,url,w,h)
+    }
+
+//    选择人员
+    function selection_person(title,url,w,h){
+        layer_show(title,url,w,h)
+    }
+    //    查询考勤
+    function access_btn(){
+        layer.confirm('<div class="cancle">请选择查询人员</div>',{
+            btn:['确认']
+        });
+    }
+//    导出记录
+    function export_out(){
+        layer.confirm('<div class="cancle">导出成功</div>',{
+            btn:['确认']
+        });
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

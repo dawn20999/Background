@@ -1,0 +1,133 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="js/pie.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+	<link rel="stylesheet" href="js/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="content/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>组织设定</title>
+</head>
+<body>
+<div class="organize">
+	<nav class="breadcrumb">组织管理<span class="c-gray en">&gt;</span> 组织设定</nav>
+	<div class="cl pd-5 bg-1 bk-gray">
+		<span class="l">
+			<a href="organize-add.html"  class="btn btn-primary radius">
+				<i class="Hui-iconfont">&#xe600;</i>
+				添加
+			</a>
+			<a href="organize-add.html" class="btn btn-danger  radius">
+				查看/修改
+			</a>
+			<a href="javascript:;" onclick="dele()"  class="btn btn-change btn-danger radius">
+				<i class="Hui-iconfont">&#xe6e2;</i>
+				删除
+			</a>
+		</span>
+	</div>
+	<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer clearfix">
+		<div class="dataTables_length zu">
+			<p>组织结构</p>
+		</div>
+		<div id="DataTables_Table_0_filter" class="dataTables_filter">
+			<label >
+				<input type="search" class="input-text" >
+				<a href="javascript:;"  class="btn btn-primary radius" id="organize-btn">搜索</a>
+			</label>
+		</div>
+	</div>
+	<table class="table">
+		<tr>
+			<td width="200" class="va-t">
+				<ul id="treeDemo" class="ztree"></ul>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<SCRIPT type="text/javascript">
+	var setting = {
+		
+//		check: {
+//			enable: true,
+//			chkStyle : "radio"
+//		},
+		data: {
+			simpleData: {
+				enable: true
+			}
+		},
+//		点击节点返回函数
+//		callback:{
+//			onClick: zTreeOnClick
+//		}
+	};
+	//		点击节点返回事件
+//	function zTreeOnClick(event, treeId, treeNode) {
+//		alert(treeNode.tId + ", " + treeNode.name);
+//	};
+	var zNodes =[
+		{ id:1, pId:0, name:"纳什空间园区", open:true},
+		{ id:11, pId:1, name:"A区域"},
+		{ id:111, pId:11, name:"A区域111",icon:"images/new.png"},
+		{ id:112, pId:11, name:"A区域112",icon:"images/new.png"},
+		{ id:113, pId:11, name:"A区域113",icon:"images/new.png"},
+		{ id:114, pId:11, name:"A区域114",icon:"images/new.png"},
+		{ id:12, pId:1, name:"B区域"},
+		{ id:121, pId:12, name:"B区域121",icon:"images/new.png"},
+		{ id:122, pId:12, name:"B区域122",icon:"images/new.png"},
+		{ id:123, pId:12, name:"B区域123",icon:"images/new.png"},
+		{ id:124, pId:12, name:"B区域124",icon:"images/new.png"},
+		{ id:13, pId:1, name:"C区域",icon:"images/new.png"},
+		{ id:2, pId:0, name:"父节点2", open:true},
+		{ id:21, pId:2, name:"父节点21", open:true},
+		{ id:211, pId:21, name:"叶子节点211",icon:"images/new.png"},
+		{ id:212, pId:21, name:"叶子节点212",icon:"images/new.png"},
+		{ id:213, pId:21, name:"叶子节点213",icon:"images/new.png"},
+		{ id:214, pId:21, name:"叶子节点214",icon:"images/new.png"},
+		{ id:22, pId:2, name:"父节点22"},
+		{ id:221, pId:22, name:"叶子节点221",icon:"images/new.png"},
+		{ id:222, pId:22, name:"叶子节点222",icon:"images/new.png"},
+		{ id:223, pId:22, name:"叶子节点223",icon:"images/new.png"},
+		{ id:224, pId:22, name:"叶子节点224",icon:"images/new.png"},
+		{ id:23, pId:2, name:"父节点23"},
+		{ id:231, pId:23, name:"叶子节点231",icon:"images/new.png"},
+		{ id:232, pId:23, name:"叶子节点232",icon:"images/new.png"},
+		{ id:233, pId:23, name:"叶子节点233",icon:"images/new.png"},
+		{ id:234, pId:23, name:"叶子节点234",icon:"images/new.png"},
+		{ id:3, pId:2, name:"父节点23", isParent:true}
+	];
+
+	$(document).ready(function(){
+		$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+	});
+
+/*用户-删除*/
+function dele(obj,id){
+	layer.confirm('<div class="cancle">请问是否删除所选组织</div><div class="none">删除后无法恢复</div>');
+}
+</SCRIPT>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <!--/meta 作为公共模版分离出去-->
+
+    <title>钥匙</title>
+</head>
+<body>
+<div class="people-key">
+    <nav class="breadcrumb">人员管理<span class="c-gray en">&gt;</span> 查看钥匙</nav>
+    <article class="page-container">
+        <form class="form form-horizontal">
+            <div class="row cl">
+                <div class="col-xs-2 col-sm-2">
+                    <span id="reson">人员：</span>
+                    <span id="name">王瑞</span>
+                </div>
+                <div class="col-xs-8 col-sm-8">
+                    <span id="tell">手机号：</span>
+                    <span id="tellnumber">13000000000</span>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-2 col-sm-2">
+                    <span id="organizations">所属组织：</span>
+                    <span id="branch">甲部门</span>
+                </div>
+                <div class="col-xs-8 col-sm-8">
+                    <span id="peoplenumb">组织编号：</span>
+                    <span id="peoplenum">13000000000</span>
+                </div>
+            </div>
+            <div class="row cl">
+                <div class="col-xs-2 col-sm-2">
+                    <span id="row-key">拥有钥匙</span>
+                </div>
+                <div class="col-xs-8 col-sm-8"></div>
+            </div>
+            <div class="row cl people-table">
+                <div class="page-pd">
+                    <table class="table table-border table-bordered table-hover table-bg table-sort">
+                        <thead>
+                        <tr class="text-c">
+                            <th width="30"><input type="checkbox" name="" value=""></th>
+                            <th width="200">设备</th>
+                            <th width="200" >设备备注</th>
+                            <th width="100">时间规则</th>
+                            <th width="100">管理</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="text-c">
+                            <td><input type="checkbox" value="1" name=""></td>
+                            <td>
+                                <p class="peopledoor">A门设备1</p>
+                            </td>
+                            <td>
+                                <p class="peopleremark">12312333</p>
+                            </td>
+                            <td>
+                                <p class="peoplerule">规则1</p>
+                            </td>
+                            <td>
+                                <a title="取消授权" href="javascript:;" onclick="member_del()" style="text-decoration:none">
+                                    取消授权
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="text-c">
+                            <td><input type="checkbox" value="1" name=""></td>
+                            <td>
+                                <p class="peopledoor">A门设备1</p>
+                            </td>
+                            <td>
+                                <p class="peopleremark">12312333</p>
+                            </td>
+                            <td>
+                                <p class="peoplerule">规则2</p>
+                            </td>
+                            <td>
+                                <a title="取消授权" href="javascript:;" onclick="member_del()" style="text-decoration:none">
+                                    取消授权
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="text-c">
+                            <td><input type="checkbox" value="1" name=""></td>
+                            <td>
+                                <p class="peopledoor">卡多宝设备2</p>
+                            </td>
+                            <td>
+                                <p class="peopleremark">12312333</p>
+                            </td>
+                            <td>
+                                <p class="peoplerule">卡多宝</p>
+                            </td>
+                            <td>
+                                <a title="取消授权" href="javascript:;" onclick="member_del()" style="text-decoration:none">
+                                    取消授权
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="row cl">
+                <div class="people-btn">
+                    <input class="btn btn-primary radius" onclick="remove_del()" type="button" value="&nbsp;&nbsp;批量取消授权&nbsp;&nbsp;">
+                    <input class="btn btn-danger radius" id="noBtn" type="button" value="&nbsp;&nbsp;返回&nbsp;&nbsp;">
+                </div>
+            </div>
+        </form>
+    </article>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/icheck/jquery.icheck.min.js"></script>
+
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript">
+    function member_del(){
+        layer.confirm('<div class="cancle">是否取消对应钥匙授权？</div>')
+    }
+    function remove_del(){
+        layer.confirm('<div class="cancle">是否取消对应钥匙授权？</div>')
+    }
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

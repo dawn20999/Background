@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5.js"></script>
+    <script type="text/javascript" src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <link rel="stylesheet" type="text/css" href="content/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="js/icheck/icheck.css" />
+    <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+    <script>DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+    <title>访客授权记录</title>
+</head>
+<body>
+<div class="accredit">
+    <nav class="breadcrumb">访客管理<span class="c-gray en">&gt;</span> 访客授权记录</nav>
+    <div class="page-container">
+        <div class="cl pd-5 bg-1 bk-gray">
+            <div class="l">
+                <span>发放时段</span>
+                <input placeholder="请选择起始时间" type="text" class="input-text" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日 HH:mm'})" style="width:170px;"> 至 <input placeholder="请选择结束时间" type="text" class="input-text" onfocus="WdatePicker({lang:'zh-cn',dateFmt:'yyyy年MM月dd日 HH:mm'})" style="width:170px;">
+            </div>
+            <div class="r">
+                <span >设备</span>
+                <input type="text" class="input-text" style="width:100px;">
+                <span class="ml-5">姓名</span>
+                <input type="text" class="input-text" style="width:100px;">
+                <span class="ml-5">
+                    手机号
+                    <input type="text" placeholder="请输入手机号" class="input-text"  style="width:170px;">
+                    <a href="javascript:;" class="btn btn-primary radius">查询</a>
+                </span>
+            </div>
+        </div>
+        <div class="page-pd">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                <tr class="text-c">
+                    <th width="200" >发放时间</th>
+                    <th width="150" >发放人</th>
+                    <th width="200">发放人手机号</th>
+                    <th width="100">访客事由</th>
+                    <th width="150">访客钥匙</th>
+                    <th width="150">设备组</th>
+                    <th width="200">设备</th>
+                    <th width="150">状态</th>
+                    <th width="200">管理</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-c">
+                        <td>2016-08-09 20:00</td>
+                        <td>王瑞</td>
+                        <td>13000000000</td>
+                        <td>快递</td>
+                        <td>13000000000</td>
+                        <td>A空间</td>
+                        <td>A空间前大门</td>
+                        <td>启用</td>
+                        <td>
+                            <a title="启用" href="javascript:;" onclick="public_start()" style="text-decoration:none">
+                                启用
+                            </a>
+                            <a title="停用" href="javascript:;" onclick="member_del()" class="ml-5" style="text-decoration:none">
+                                停用
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td>2016-08-09 20:00</td>
+                        <td>王瑞</td>
+                        <td>13000000000</td>
+                        <td>保洁</td>
+                        <td>13000000000</td>
+                        <td>A空间</td>
+                        <td>A空间前大门</td>
+                        <td>停用</td>
+                        <td>
+                            <a title="启用" href="javascript:;" onclick="public_start()" style="text-decoration:none">
+                                启用
+                            </a>
+                            <a title="停用" href="javascript:;" onclick="member_del()" class="ml-5" style="text-decoration:none">
+                                停用
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="text-c">
+                        <td>2016-08-09 20:00</td>
+                        <td>王瑞</td>
+                        <td>13000000000</td>
+                        <td>外卖</td>
+                        <td>13000000000</td>
+                        <td>A空间</td>
+                        <td>A空间前大门</td>
+                        <td>过期</td>
+                        <td>
+                            <a title="启用" href="javascript:;" onclick="public_start()" style="text-decoration:none">
+                                启用
+                            </a>
+                            <a title="停用" href="javascript:;" onclick="member_del()" class="ml-5" style="text-decoration:none">
+                                停用
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/layer/2.1/layer.js"></script>
+<script type="text/javascript" src="js/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/H-ui.js"></script>
+<script type="text/javascript" src="js/H-ui.admin.js"></script>
+<script type="text/javascript">
+    $('.table-sort').dataTable({
+        "searching":false,
+        bLengthChange: false,
+        "ordering":false,
+        "bPaginate" : false,
+        "bInfo": false,
+    });
+    /*停用*/
+    function member_del(){
+        layer.confirm('<div class="cancle">停用该人员访客钥匙</div>',{
+            btn:['确认','取消']
+        });
+    }
+    //    启用
+    function public_start(){
+        layer.confirm('<div class="cancle">启用成功</div>',{
+            btn:['确认']
+        });
+    }
+</script>
+</body>
+</html>
