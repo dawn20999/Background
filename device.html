@@ -18,6 +18,70 @@
     <link rel="stylesheet" type="text/css" href="content/skin.css" id="skin" />
     <link rel="stylesheet" href="js/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <style>
+        .delete{
+            display: none;
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            height:100%;
+            left: 0;
+            top:0;
+        }
+        .delete .deleContent{
+            width:300px;
+            height:200px;
+            background: #f1f4f8;
+            position: absolute;
+            z-index: 999;
+            left: 50%;
+            top:50%;
+            margin-left: -150px;
+            margin-top:-100px;
+            text-align: center;
+            border-radius: 4px;
+            -webkit-box-shadow: 5px 0 10px 0 rgba(0,0,0,0.1),
+            0 5px  10px 0 rgba(0,0,0,0.1),
+            -5px 0 10px 0 rgba(0,0,0,0.1),
+            0 0 0 0 rgba(0,0,0,0.1);
+            -moz-box-shadow: 5px 0 10px 0 rgba(0,0,0,0.1),
+            0 5px  10px 0 rgba(0,0,0,0.1),
+            -5px 0 10px 0 rgba(0,0,0,0.1),
+            0 0 0 0 rgba(0,0,0,0.1);
+            box-shadow: 5px 0 10px 0 rgba(0,0,0,0.1),
+            0 5px  10px 0 rgba(0,0,0,0.1),
+            -5px 0 10px 0 rgba(0,0,0,0.1),
+            0 0 0 0 rgba(0,0,0,0.1);
+        }
+        .delete h2{
+            font-size: 14px;
+            font-weight:bold;
+            color:#65748d;
+            padding-top: 54px;
+            padding-bottom:24px;
+        }
+        .delete span{
+            color:#ef5e2b;
+            font-size: 14px;
+        }
+        .delete .delButton{
+            position: absolute;
+            width: 150px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            color:#fff;
+            bottom: 0;
+        }
+        .delete .onBtn{
+            background: #65748d;
+            left: 0;
+        }
+        .delete .cancleBtn{
+            background: #9baac3;
+            right: 0;
+        }
+    </style>
     <!--[if IE 6]>
     <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
     <script>DD_belatedPNG.fix('*');</script>
@@ -88,7 +152,8 @@
                             </td>
                             <td class="td-status">
                                 <a title="修改" href="device-change.html" class="ml-5" style="text-decoration:none">修改</a>
-                                <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
+                                <!--<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>-->
+                                <a title="删除" href="javascript:;" class="member_dele ml-5" style="text-decoration:none">删除</a>
                             </td>
                         </tr>
                         <tr class="text-c">
@@ -100,13 +165,24 @@
                             </td>
                             <td class="td-status">
                                 <a title="修改" href="device-change.html" class="ml-5" style="text-decoration:none">修改</a>
-                                <a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>
+                                <!--<a title="删除" href="javascript:;" onclick="member_del(this,'1')" class="ml-5" style="text-decoration:none">删除</a>-->
+                                <a title="删除" href="javascript:;" class="member_dele ml-5" style="text-decoration:none">删除</a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-
+            </div>
+        </div>
+    </div>
+    <!-- 删除 -->
+    <div class="delete" id="delete1">
+        <div class="deleContent">
+            <h2>请问是否删除<span id="deName"></span></h2>
+            <span>删除后无法恢复</span>
+            <div class="deleteBtn cl">
+                <a href="javascript:;" class="delButton onBtn fl" id="onBtn">确认删除</a>
+                <a href="javascript:;" class="delButton cancleBtn fl" id="cancleBtn1">取消</a>
             </div>
         </div>
     </div>
@@ -176,18 +252,36 @@
 
     $(document).ready(function(){
         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        $("#cancleBtn1").on('click',function(){
+            $("#delete1").hide();
+        });
+        $(".member_dele").each(function(){
+//        var index=$(this).index();
+            var value=$(this).parent().parent().find("td:first").html();
+            var cont=$(this).parent().parent();
+            $(this).on('click',function(){
+                $("#delete1").show();
+                $("#deName").html(value);
+                $("#onBtn").on('click',function(){
+                    cont.remove();
+                    $("#delete1").hide();
+                    console.log(cont);
+                });
+            });
+        });
     });
 
     /*用户-删除*/
     function dele(obj,id){
         layer.confirm('<div class="cancle">请问是否删除所选项目</div><div class="none">删除后无法恢复</div>');
     }
-    function member_del(obj,id){
-        layer.confirm('<div class="cancle">请问是否删除所选项目</div><div class="none">删除后无法恢复</div>',function(index){
-            $(obj).parents("tr").remove();
-            layer.msg('已删除!',{icon:1,time:1000});
-        });
-    }
+
+//    function member_del(obj,id){
+//        layer.confirm('<div class="cancle">请问是否删除所选项目</div><div class="none">删除后无法恢复</div>',function(index){
+//            $(obj).parents("tr").remove();
+//            layer.msg('已删除!',{icon:1,time:1000});
+//        });
+//    }
 $(function(){
     $("#dataTable").dataTable({
         "searching":false,
