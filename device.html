@@ -255,22 +255,34 @@
 
 
 //        点击删除按钮
-        $(".member_dele").each(function(){
-//        var index=$(this).index();
+//        $(".member_dele").each(function(){
+////        var index=$(this).index();
+//            var value=$(this).parent().parent().find("td:first").html();
+//            var cont=$(this).parent().parent();
+//            $(this).on('click',function(){
+//                $("#delete1").show();
+//                $("#deName").html(value);
+//                $("#onBtn").on('click',function(){
+//                    cont.remove();
+//                    $("#delete1").hide();
+//                    console.log(cont);
+//                });
+//            });
+//        });
+        $(".member_dele").on('click',function(){
             var value=$(this).parent().parent().find("td:first").html();
             var cont=$(this).parent().parent();
-            $(this).on('click',function(){
-                $("#delete1").show();
-                $("#deName").html(value);
-                $("#onBtn").on('click',function(){
-                    cont.remove();
-                    $("#delete1").hide();
-                    console.log(cont);
-                });
+            $("#delete1").show();
+            $("#deName").html(value);
+            $("#onBtn").on('click',function(){
+                cont.remove();
+                $("#delete1").hide();
+                // console.log(cont)
             });
         });
 //        弹出层取消按钮
         $("#cancleBtn1").on('click',function(){
+            $("#onBtn").off('click');
             $("#delete1").hide();
         });
     });
