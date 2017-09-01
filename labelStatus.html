@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="keywords" content="电子标签,idiLinker"/>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/html5.js"></script>
+    <script type="text/javascript" src="lib/respond.min.js"></script>
+    <script type="text/javascript" src="js/pie.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="content/H-ui.admin.css" />
+    <!-- <link rel="stylesheet" href="content/simplePagination.css"> -->
+    <link rel="stylesheet" type="text/css" href="content/style.css" />
+    <title>标签状态</title>
+    <style>
+        /*baseStation.html*/
+        .baseStation .term{
+            padding:0 50px;
+            color:#7a868d;
+            font-size: 14px;
+        }
+        .baseStation .term input{
+            color:#7a868d;
+        }
+        .baseStation .termBox{
+            height: 70px;
+            background: #fff;
+            margin-top: 30px;
+            padding-left: 20px;
+        }
+        .baseStation .matter{
+            margin-left: 30px;
+        }
+        .baseStation .renson{
+            line-height:70px;
+        }
+        .baseStation .matterSelect{
+            height:32px;
+            border:1px solid #b1c3cc;
+            margin-left: 20px;
+            margin-top: 18px;
+            position: relative;
+        }
+        .matterSelect span{
+            padding-left: 10px;
+            padding-right: 10px;
+            min-width: 100px;
+            line-height: 32px;
+            color:#7a868d;
+            border-right: 1px solid #b1c3cc;
+        }
+        .matterSelect i{
+            width: 8px;
+            height: 5px;
+            /*background: url(../images/up.png) no-repeat;*/
+            background-size: 100% 100%;
+            margin-top: 14px;
+            margin-right:10px;
+            margin-left: 10px;
+        }
+        .matterSelect .rule{
+            position: absolute;
+            width: 100%;
+            /*height: 34px;*/
+            top:34px;
+            left: -1px;
+            
+            font-size: 14px;
+            color:#7a868d;
+            display: none;
+            background:#fff;
+            border: 1px solid #b1c3cc;
+            z-index: 1;
+        }
+        .matterSelect .companyName{
+            font-weight: 600;
+            padding-left: 5px;
+        }
+        .matterSelect dd{
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        .matterSelect dd:hover{
+            background: #15a4fa;
+            color:#fff;
+        }
+        .matterSelect .dlShow{
+            display: block;
+        }
+        .baseStation .w-110{
+            width:110px;
+        }
+
+        /*labelStatus.html*/
+        .labelStatus .term{
+            padding:0 50px;
+            color:#7a868d;
+            font-size: 14px;
+        }
+        .labelStatus .term input{
+            color:#7a868d;
+        }
+        .labelStatus .termBox{
+            /*height: 70px;*/
+            background: #fff;
+            margin-top: 30px;
+            /*padding-left: 20px;*/
+        }
+        .labelStatus .matter{
+            margin-left: 12px;
+        }
+        .labelStatus .renson{
+            line-height:70px;
+            width: 60px;
+            text-align: right;
+        }
+        .labelStatus .matterSelect{
+            height:32px;
+            border:1px solid #b1c3cc;
+            margin-left: 6px;
+            margin-top: 18px;
+            position: relative;
+        }
+
+        .labelStatus .w-110{
+            width:110px;
+            margin-top: 18px;
+            margin-left: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="labelStatus bg">
+        <div class="breadcrumb">系统状态
+            <span>&gt;</span>
+            <span class="gray">标签状态</span>
+        </div>
+        <div class="term">
+            <div class="termBox">
+                <div class="cl">
+                    <div class="matter fl">
+                        <span class="renson fl">电量</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect eleBtn cl">
+                                <span class="fl" class="eleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule">
+                                <ul>
+                                    <li>满</li>
+                                    <li>好</li>
+                                    <li>一半</li>
+                                    <li>弱</li>
+                                    <li>微弱</li>
+                                    <li>空</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">信号强度</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect eleBtn cl">
+                                <span class="fl" class="eleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule">
+                                <ul>
+                                    <li>弱</li>
+                                    <li>中</li>
+                                    <li>强</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">工作状态</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect eleBtn cl">
+                                <span class="fl" class="eleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule">
+                                <ul>
+                                    <li>工作中</li>
+                                    <li>空闲中</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">标签状态</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect eleBtn cl">
+                                <span class="fl" class="eleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule">
+                                <ul>
+                                    <li>正常</li>
+                                    <li>异常</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cl">
+                    <div class="matter fl">
+                        <span class="renson fl">标签分类</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect eleBtn cl">
+                                <span class="fl" class="eleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule">
+                                <ul>
+                                    <li>EPOP屏</li>
+                                    <li>4.0寸普通标签</li>
+                                    <li>2.8寸普通标签</li>
+                                    <li>1.8寸普通标签</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">所属门店</span>
+                        <div class="matterSelect fl">
+                            <div class="btnSelect storeBtn cl">
+                                <span class="fl" id="ruleVal">请选择</span>
+                                <i class="fr"></i>
+                            </div>
+                            <div class="rule" id="store">
+                                <dl class="company">
+                                    <dt class="companyName">卡多宝</dt>
+                                    <dd>望京科技园</dd>
+                                    <dd>中关村科技园</dd>
+                                </dl>
+                                <dl class="company">
+                                    <dt class="companyName">汉朗科技</dt>
+                                    <dd>望京科技园</dd>
+                                    <dd>中关村科技园</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">基站编号</span>
+                        <input type="text" class="text-input w-110 fl">
+                    </div>
+                    <div class="matter fl">
+                        <span class="renson fl">标签编号</span>
+                        <input type="text" class="text-input w-110 fl">
+                    </div>
+                    <a href="javascript:;" class="btn btn-primary radius ml-20 mt-18 fl">查询</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-pd">
+            <table class="table table-border table-bordered table-hover table-bg table-sort">
+                <thead>
+                 <tr class="text-c">
+                  <th></th>
+                  <th>基站编号</th>
+                  <th>所属门店</th>
+                  <th>基站IP</th>
+                  <th>基站状态</th>
+                  <th>备注</th>
+                  <th>标签数量</th>
+                  <th>最后注册时间</th>
+              </tr>
+          </thead>
+          <tbody>
+             <tr class="text-c">
+              <td>1</td>
+              <td>13</td>
+              <td>望京科技园</td>
+              <td>192.168.0.10:30298</td>
+              <td>在线</td>
+              <td>192.168.0.10</td>
+              <td>1</td>                
+              <td>2017-08-25 16:18:11</td>
+          </tr>
+          <tr class="text-c">
+              <td>2</td>
+              <td>13</td>
+              <td>望京科技园</td>
+              <td>192.168.0.10:30298</td>
+              <td>在线</td>
+              <td>192.168.0.10</td>
+              <td>1</td>                
+              <td>2017-08-25 16:18:11</td>
+          </tr>
+      </tbody>
+  </table>
+  <div id="page"></div>
+</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<!-- <script src="js/jquery.simplePagination.js"></script> -->
+<script type="text/javascript">
+    $(function() {
+        $('.table-sort').dataTable({
+            "searching": false,
+            "bLengthChange": false,
+            "ordering": false,
+            "bPaginate": false,
+            "bInfo": false
+        });
+        // 分页
+        // $("#page").pagination({
+        //     items: 100,     //总共多少条数据   
+        //     itemsOnPage: 10, //每页显示几条数据
+        //     cssStyle: 'compact-theme', //dark-theme  light-theme
+        //     //onInit: changePage,       //初始化调用的函数。
+        //     //onPageClick: changePage
+        // });
+        // 所属门店
+        $(".storeBtn").on('click',function(event){
+            $(".rule").removeClass('dlShow');
+            $(this).siblings("#store").toggleClass('dlShow');
+			$(document).one("click", function (){//对document绑定一个影藏Div方法
+              $("#store").removeClass('dlShow');
+          });
+			event.stopPropagation();//阻止事件向上冒泡
+        });
+        $("#store").click(function (event) {
+			event.stopPropagation();//阻止事件向上冒泡
+		});
+        $("#store dl dd").on('click',function(){
+        	var ruleStr=$(this).text();
+        	$("#ruleVal").text(ruleStr);
+        	$("#store").removeClass('dlShow');
+        });
+
+        // 电量
+        jQuery.select=function(obj,tg_obj,ad_obj,event){}
+        // $(".eleBtn").on('click',function(event){
+        //     $(".rule").removeClass('dlShow');
+        //     $(this).siblings(".rule").toggleClass('dlShow');
+        //     $(document).one("click", function (){//对document绑定一个影藏Div方法
+        //         $(".rule").removeClass('dlShow');
+        //     });
+        //     event.stopPropagation();//阻止事件向上冒泡
+        //     $(this).siblings(".rule").click(function (event) {
+        //         event.stopPropagation();//阻止事件向上冒泡
+        //     });
+        //     $(this).siblings(".rule").find('ul li').on('click',function(){
+        //         var ruleStr=$(this).text();
+        //         $(".eleBtn span").text(ruleStr);
+        //         $(".rule").removeClass('dlShow');
+        //     });
+        // });
+        
+    });
+
+</script>
+</body>
+</html>
