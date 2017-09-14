@@ -18,12 +18,28 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	$(function(){
+        // var store=$("#store option:selected").text();
+        var store1=$("#store").find('option:selected').text();
+        console.log(store1)
+        $("#store").change(function(){
+            // var optionVal=store.options[store.selectedIndex].parentNode.attributes;
+            // console.log(optionVal["label"].value)
+            // console.log(store.options[store.selectedIndex].value)
+            // console.log(store1)
+            if(store.options[store.selectedIndex].value!=0){
+                var prompt=$("#store").parent().parent().find('.prompt');
+                prompt.text('');
+            }
+                
+        });
+
+
         $("#conformBtn").click(function(){
     		var userName=$("#userName").val();
     		var password=$("#password").val();
     		var rePassword=$("#rePassword").val();
     		var realName=$("#realName").val();
-    		var store=$("#store option:selected").text();
+            // var store=$("#store option:selected").text();
     		var userRoles=$("#userRoles option:selected").text();
     		var userStatus=$("#userStatus option:selected").text();
     		var loginType=$("#loginType option:selected").text();
@@ -44,7 +60,7 @@
     			var prompt=$("#realName").parent().parent().find('.prompt');
     			prompt.text('请填写真实姓名');
     			return;
-    		}else if(store == '请选择'){
+    		}else if(store1 == '请选择'){
     			var prompt=$("#store").parent().parent().find('.prompt');
     			prompt.text('请选择所属门店');
     			return;
@@ -63,7 +79,9 @@
     		}else if(password.trim()!=rePassword.trim()){
     			$(".errorMessage p").text('密码不一致,重新填写')
     			return;
-    		}
+    		}else{
+                console.log('success')
+            }
         });
 	});
 </script>
@@ -129,9 +147,15 @@
     				<div class="fl">
     					<div class="regularSelect">
     						<select name="rule" class="companSelect" id="store">
-    							<option value="0">请选择</option>
-    							<option value="望京科技园">望京科技园</option>
-    							<option value="中关村科技园">中关村科技园</option>
+                                <option value="0">请选择</option>
+                                <optgroup label="卡多宝">
+                                    <option value="望京科技园1">望京科技园1</option>
+                                    <option value="中关村科技园1">中关村科技园1</option>
+                                </optgroup>
+                                <optgroup label="汉朗科技">
+                                    <option value="望京科技园">望京科技园</option>
+                                    <option value="中关村科技园">中关村科技园</option>
+                                </optgroup>
     						</select>
     					</div>
     					<span class="prompt"></span>
