@@ -18,23 +18,20 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	$(function(){
-        // var store=$("#store option:selected").text();
-        var store1=$("#store").find('option:selected').text();
-        console.log(store1)
-        $("#store").change(function(){
-            // var optionVal=store.options[store.selectedIndex].parentNode.attributes;
-            // console.log(optionVal["label"].value)
-            // console.log(store.options[store.selectedIndex].value)
-            // console.log(store1)
-            if(store.options[store.selectedIndex].value!=0){
-                var prompt=$("#store").parent().parent().find('.prompt');
-                prompt.text('');
-            }
-                
-        });
-
-
         $("#conformBtn").click(function(){
+            var store1=$("#store").find('option:selected').text();
+            console.log(store1)
+            $("#store").change(function(){
+                // var optionVal=store.options[store.selectedIndex].parentNode.attributes;
+                // console.log(optionVal["label"].value)
+                // console.log(store.options[store.selectedIndex].value)
+                // console.log(store1)
+                if(store.options[store.selectedIndex].value!=0){
+                    var prompt=$("#store").parent().parent().find('.prompt');
+                    prompt.text('');
+                }
+                    
+            });
     		var userName=$("#userName").val();
     		var password=$("#password").val();
     		var rePassword=$("#rePassword").val();

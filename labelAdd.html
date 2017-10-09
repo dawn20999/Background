@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<link rel="stylesheet" type="text/css" href="content/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="content/style1.css" />
+<title>添加标签</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script>
+	$(function(){
+    	$(".pl-20").on('click',function(){
+    		var tag=$(this).find('input[type="radio"]:checked').val();
+    		if(tag == 'single'){
+    			$(".single").show();
+    			$(".double").hide();
+    		}else{
+    			$(".single").hide();
+    			$(".double").show();
+    		}
+    	});
+        $("#file").on('change',function(){
+            var fileVal=$("#file").val();
+            var uploadName=getFileName(fileVal);
+            $("#fileName").val(uploadName);
+        });
+		// 确定
+        $("#conformBtn").click(function(){
+    		var storeVal=$("#store").find('option:selected').val();
+    		var labelType=$("#labelType").find('option:selected').val();
+    		var labelNum=$("#labelNum").val();
+            var fileVal=$("#file").val();
+            var fileName=$("#fileName").val();
+            var storeSpan=$("#store").parent().parent().find('.prompt');
+            var typeSpan=$("#labelType").parent().parent().find('.prompt');
+            var numberSpan=$("#labelNum").parent().parent().find('.prompt');
+            var fileSpan=$("#file").parent().parent().find('.prompt');
+
+            
+            $(".row").each(function(){
+                $(this).find('.text-input').on('input',function(){
+                    var _this=$(this);
+                    console.log(_this)
+                    if($.trim($(this).val())!=''){
+                        _this.parent().parent().find('.prompt').text('');
+                    }
+                });
+                $(this).find(".companSelect").change(function(){
+                    var _this=$(this);
+                    console.log(_this)
+                    var optionVal=$(this).find("option:selected").val();
+                    if(optionVal != '0'){
+                        _this.parent().parent().find('.prompt').text('');
+                    }
+                });
+            });
+
+    		if(storeVal=='0'){
+    			storeSpan.text('请选择所属门店');
+    			return;
+    		}
+            if(labelType=='0'){
+    			typeSpan.text('请选择标签分类');
+    			return;
+    		}
+            if($(".single").show()){
+                if ( $.trim(labelNum)=='') {
+                    numberSpan.text('请选择标签分类');
+                    return;
+                }
+            }
+            if($(".single").hide()){
+                if ($.trim(fileName)== '') {
+                    fileSpan.text('请上传文件');
+                    return;
+                }
+            }
+            console.log(1)
+        });
+	});
+    function getFileName(o){
+        var pos=o.lastIndexOf("\\");
+        return o.substring(pos+1);  
+    }
+</script>
+</head>
+<body>
+<div class="labelAdd bg">
+	<div class="breadcrumb">系统设置
+		<span>&gt;</span>标签管理
+		<span>&gt;</span>
+		<span class="gray">添加标签</span>
+	</div>
+    <div class="table-row cl">
+    	<div class="col-xs-6 col-sm-6">
+    		<div class="add">
+    			<div class="row pl-20 cl">
+    				<div class="fl">
+    					<input type="radio" checked="checked" name="addmanage" value="single" />
+    					<span class="choice">添加单个标签</span>
+    				</div>
+    				<div class="ml-20 fl">
+    					<input type="radio" name="addmanage" value="double" />
+    					<span class="choice">批量导入标签</span>
+    				</div>
+    			</div>
+    			<div class="row cl">
+    				<div class="caption fl">
+    					<label>所属门店</label>
+    				</div>
+    				<div class="fl">
+    					<div class="regularSelect">
+    						<select name="rule" class="companSelect" id="store">
+    							<option value="0">请选择</option>
+    							<optgroup label="卡多宝">
+    								<option value="望京科技园">望京科技园</option>
+    								<option value="中关村科技园">中关村科技园</option>
+    							</optgroup>
+    							<optgroup label="汉朗科技">
+    								<option value="望京科技园1">望京科技园</option>
+    								<option value="中关村科技园1">中关村科技园</option>
+    							</optgroup>
+    						</select>
+    					</div>
+    					<span class="prompt"></span>
+    				</div>
+    			</div>
+    			<div class="row cl">
+    				<div class="caption fl">
+    					<label>标签分类</label>
+    				</div>
+    				<div class="fl">
+    					<div class="regularSelect">
+    						<select name="rule" class="companSelect" id="labelType">
+    							<option value="0">请选择</option>
+    							<option value="EPOP屏">EPOP屏</option>
+    							<option value="4.0寸普通标签">4.0寸普通标签</option>
+    							<option value="2.8寸普通标签">2.8寸普通标签</option>
+    							<option value="1.8寸普通标签">1.8寸普通标签</option>
+    						</select>
+    					</div>
+    					<span class="prompt"></span>
+    				</div>
+    			</div>
+    			<div class="row single cl">
+    				<div class="caption fl">
+						<label>标签编号</label>
+    				</div>
+    				<div class="fl">
+    					<div>
+    						<input type="text" class="text-input" id="labelNum" title="标签编号" />
+    					</div>
+    					<span class="prompt"></span>
+    				</div>
+    			</div>
+    			<div class="row double cl">
+    				<div class="caption fl">
+						<label>上传文件</label>
+    				</div>
+    				<div class="fl">
+    					<div class="fileName">
+    						<input type="text" class="text-input" readonly="true" id="fileName" />
+    						<a href="javascript:;" class="btn btn-orange radius">
+    							浏览
+    						</a>
+                            <input type="file" class="file" id="file" />
+    					</div>
+                        <p class="tip">提示：必须上传txt格式的文档。示例:<a href="javascript:;" class="example" target="_blank">点击查看</a> </p>
+    					<span class="prompt"></span>
+    				</div>
+    			</div>
+    		</div>   
+    	</div>
+    </div> 
+    <div class="buttonBox cl">
+    	<a href="javascript:;" class="btnList conformBtn fl" id="conformBtn">确定</a>
+    	<a href="labelManage.html" class="btnList deleteBtn ml-20 fl" id="cancleBtn">取消</a>
+    </div>
+</div>
+</body>
+</html>
